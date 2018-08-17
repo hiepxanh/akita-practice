@@ -1,0 +1,11 @@
+<div class="input-field">
+	<i class="material-icons prefix">add_alarm</i>
+	<input type="text" class="form-control" placeholder="Add Todo..." #input (keydown.enter)="add(input)">
+</div>
+
+<app-todos-filter (update)="changeFilter($event)" [filters]="filters" [active]="activeFilter$ | async">
+</app-todos-filter>
+
+<app-todos-list [todos]="todos$ | async" (delete)="delete($event)" (complete)="complete($event)"></app-todos-list>
+
+<div *ngIf="selectAllDone$ | async">All done!!!!</div>
