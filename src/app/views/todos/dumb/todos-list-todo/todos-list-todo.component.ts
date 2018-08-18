@@ -4,11 +4,11 @@ import { ID } from '@datorama/akita';
 import { FormControl } from '@angular/forms';
 import { TakeUntilDestroy, untilDestroyed } from 'ngx-take-until-destroy';
 
-
+@TakeUntilDestroy()
 @Component({
   selector: 'app-todos-list-todo',
   templateUrl: './todos-list-todo.component.html',
-  styleUrls: ['./todos-list-todo.component.css'],
+  styleUrls: ['./todos-list-todo.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TodosListTodoComponent implements OnInit,OnDestroy {
@@ -23,10 +23,9 @@ export class TodosListTodoComponent implements OnInit,OnDestroy {
     this.control = new FormControl(this.todo.completed);
     this.control.valueChanges
     .pipe(untilDestroyed(this))
+    .subscribe((completed:boolean) => this.complete.emit({...this.todo, completed}))
   }
 
-  ngOnDestroy() {
-
-  }
+  ngOnDestroy(): void { }
 
 }
