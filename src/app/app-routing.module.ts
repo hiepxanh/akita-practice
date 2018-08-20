@@ -18,11 +18,18 @@ const routes: Routes = [
     {
         path: 'books',
         loadChildren: './views/books/books.module#BooksModule'
+    },
+    {
+        path: 'pizzas',
+        loadChildren: './views/pizzas/pizzas.module#PizzasModule'
     }
 ]
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes)],
+    imports: [RouterModule.forRoot(
+        routes,
+        { enableTracing: true }
+    )],
     exports: [RouterModule]
 })
 
