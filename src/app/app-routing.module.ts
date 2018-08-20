@@ -5,11 +5,19 @@ const routes: Routes = [
     {
         path: '',
         pathMatch: 'full',
-        redirectTo: 'todos'
+        redirectTo: ''
+    },
+    {
+        path: 'home',
+        loadChildren: './views/home/home.module#HomeModule'
     },
     {
         path: 'todos',
         loadChildren: './views/todos/todos.module#TodosModule'
+    },
+    {
+        path: 'books',
+        loadChildren: './views/books/books.module#BooksModule'
     }
 ]
 
