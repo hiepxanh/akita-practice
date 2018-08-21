@@ -13,6 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     TodosRoutingModule,
     ReactiveFormsModule
+    
   ],
   declarations: [TodosPageComponent, TodosListComponent, TodosListTodoComponent, TodosFilterComponent]
 })

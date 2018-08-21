@@ -18,11 +18,16 @@
   </li>
 </ul> -->
 <ul>
-  <li><a routerLink="home">Home</a></li>
-  <li><a routerLink="/todos">Todos</a></li>
-  <li><a routerLink="/books">Books</a></li>
-  <li><a routerLink="/pizzas">Pizzas</a></li>
+  <li style="display: inline-block;margin-left:20px"><a routerLink="home">Home</a></li>
+  <li style="display: inline-block;margin-left:20px"><a routerLink="/todos">Todos</a></li>
+  <li style="display: inline-block;margin-left:20px"><a routerLink="/books">Books</a></li>
+  <li style="display: inline-block;margin-left:20px"><a routerLink="/pizzas">Pizzas</a></li>
+  <li style="display: inline-block;margin-left:20px"><a routerLink="/products">Products</a></li>
+  <li *showIfLogged="false" style="display: inline-block;margin-left:20px"><a routerLink="/login" >login</a></li>
+  <li *showIfLogged="true" style="display: inline-block;margin-left:20px"><a (click)="logout()" >logout</a></li>
 </ul>
+
+<p>{{ name$ | async}}</p>
 
 <div class="container" class="padding">
 	<router-outlet></router-outlet>

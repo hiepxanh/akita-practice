@@ -12,7 +12,7 @@ import { PizzasService } from '../../state/pizzas.service';
 })
 export class PizzasComponent implements OnInit {
   pizzas$: Observable<Pizza[]>;
-  activePizzaTopping$: Observable<Topping[]>;
+  activePizzaToppings$: Observable<Topping[]>;
   toppings: Topping[];
 
   get activePizzaId(): ID {
@@ -26,7 +26,7 @@ export class PizzasComponent implements OnInit {
 
   ngOnInit() {
     this.pizzas$ = this.pizzasQuery.selectAll();
-    this.activePizzaTopping$ = this.pizzasQuery.selectPizzaToppings();
+    this.activePizzaToppings$ = this.pizzasQuery.selectPizzaToppings();
     this.toppings = toppingsList;
   }
 
