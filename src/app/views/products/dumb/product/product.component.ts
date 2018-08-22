@@ -7,7 +7,7 @@ import { Product } from '@app/models/product';
   styleUrls: ['./product.component.scss']
 })
 export class ProductComponent implements OnInit {
-  @Input() produc: Product;
+  @Input() product: Product;
   @Output() add = new EventEmitter<Product>();
   @Output() subtract = new EventEmitter<Product>();
 

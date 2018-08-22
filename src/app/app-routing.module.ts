@@ -26,12 +26,12 @@ const routes: Routes = [
         loadChildren: './views/pizzas/pizzas.module#PizzasModule'
     },
     {
-        path: 'products',
-        loadChildren: './views/products/products.module#ProductsModule'
-    },
-    {
         path: 'login',
         loadChildren: './views/login/login.module#LoginModule'
+    },
+    {
+        path: 'products',
+        loadChildren: './views/products/products.module#ProductsModule'
     }
 ]
 

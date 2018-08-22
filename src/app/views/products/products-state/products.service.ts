@@ -6,7 +6,7 @@ import { ProductsStore } from "./products.store";
 import { Observable } from "rxjs";
 import { Product } from "@app/models/product";
 import { tap } from "rxjs/operators";
-import { noop } from "@datorama/akita";
+import { noop, ID } from "@datorama/akita";
 
 @Injectable({providedIn: ProductsStateModule})
 
@@ -26,4 +26,10 @@ export class ProductsService {
         );
         return this.productsQuery.isPristine ? request: noop();
     }
+
+    getProduct(id: ID) {
+        this.productsDataService.getProduct(id).subscribe(product => {
+          this.productsStore.add(product);
+        });
+      }
 }

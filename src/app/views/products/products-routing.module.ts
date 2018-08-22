@@ -1,11 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ProductsPageComponent } from './smart/products-page/products-page.component';
+import { ProductsComponent } from './smart/products/products.component';
+import { ProductComponent } from './dumb/product/product.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: ProductsPageComponent
+    component: ProductsComponent
+  },
+  {
+    path: ':id',
+    loadChildren: '../product/product.module#ProductModule'
   }
 ];
 

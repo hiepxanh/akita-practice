@@ -10,4 +10,10 @@ export class ProductsQuery extends QueryEntity<ProductsState, Product> {
     constructor(protected store: ProductsStore) {
         super(store);
     }
+
+    getProducts(value: string) {
+        return this.selectAll({
+            filterBy: entity => entity.title.toLowerCase().includes(value)
+        })
+    }
 }
