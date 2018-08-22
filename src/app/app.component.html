@@ -1,32 +1,34 @@
-<nav>
-  <div class="nav-wrapper cyan lighten-0">
-    <a class="brand-logo" routerLink="/">Akita Store</a>
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li *showIfLogged="true"><a (click)="logout()">Logout</a></li>
-      <li *showIfLogged="false">
-          <a routerLinkActive="red-text text-lighten-2" [routerLink]="'login'">Login</a>
-        </li>
-        
-      <li *ngFor="let item of navItems">
-        <a routerLinkActive="red-text text-lighten-2" [routerLink]="item.toLowerCase()">{{item}}</a>
-      </li>
-      
-      <li><a routerLinkActive="red-text text-lighten-2" routerLink="cart">Cart <span class="new badge">{{count$ | async}}</span></a></li>
-    </ul>
-  </div>
-</nav>
-<!-- <ul>
-  <li style="display: inline-block;margin-left:20px"><a routerLink="home">Home</a></li>
-  <li style="display: inline-block;margin-left:20px"><a routerLink="/todos">Todos</a></li>
-  <li style="display: inline-block;margin-left:20px"><a routerLink="/books">Books</a></li>
-  <li style="display: inline-block;margin-left:20px"><a routerLink="/pizzas">Pizzas</a></li>
-  <li style="display: inline-block;margin-left:20px"><a routerLink="/products">Products</a></li>
-  <li *showIfLogged="false" style="display: inline-block;margin-left:20px"><a routerLink="/login" >login</a></li>
-  <li *showIfLogged="true" style="display: inline-block;margin-left:20px"><a (click)="logout()" >logout</a></li>
-</ul> -->
 
-<p>{{ name$ | async}}</p>
 
-<div class="container" class="padding">
-	<router-outlet></router-outlet>
-</div>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav [opened]="showSidenav$ | async">Start</mat-sidenav>
+    <mat-sidenav-content>
+        <nav>
+            <div class="nav-wrapper cyan lighten-0">
+              <a class="brand-logo" routerLink="/">Akita Store</a>
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li *showIfLogged="true"><a (click)="logout()">Logout</a></li>
+                <li *showIfLogged="false">
+                    <a routerLinkActive="red-text text-lighten-2" [routerLink]="'login'">Login</a>
+                  </li>
+                  
+                <li *ngFor="let item of navItems">
+                  <a routerLinkActive="red-text text-lighten-2" [routerLink]="item.toLowerCase()">{{item}}</a>
+                </li>
+                
+                <li><a routerLinkActive="red-text text-lighten-2" routerLink="cart">Cart <span class="new badge">{{count$ | async}}</span></a></li>
+              </ul>
+            </div>
+          </nav>
+          
+          <!-- <button mat-button (click)="sidenav.toggle()">sidenav.toggle()</button> -->
+          <button mat-button (click)="openSidenav()">openSidenav()</button>
+          <p>{{ name$ | async}}</p>
+          
+          <div class="container" class="padding">
+            <router-outlet></router-outlet>
+          </div>
+          
+    </mat-sidenav-content>
+</mat-sidenav-container>
