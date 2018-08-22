@@ -5,7 +5,7 @@ import { Product } from "@app/models/product";
 import { ProductsStore, ProductsState } from "./products.store";
 
 
-@Injectable({providedIn: ProductsStateModule})
+@Injectable({providedIn: 'root'})
 export class ProductsQuery extends QueryEntity<ProductsState, Product> {
     constructor(protected store: ProductsStore) {
         super(store);

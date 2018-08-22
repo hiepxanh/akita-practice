@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { CartRoutingModule } from './cart-routing.module';
 import { CartComponent } from './smart/cart/cart.component';
+import { CartStateModule } from './cart-state/cart-state.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    CartRoutingModule
+    CartRoutingModule,
+    CartStateModule
   ],
   declarations: [CartComponent]
 })

@@ -7,7 +7,7 @@ import {  publishReplay, map, refCount } from "rxjs/operators";
 import { ProductsQuery } from "../../products/products-state/products.query";
 import { combineLatest } from "rxjs";
 
-Injectable({providedIn: CartStateModule})
+@Injectable({providedIn: 'root'})
 export class CartQuery extends QueryEntity<CartState, CartItem> {
     constructor(
         protected store: CartStore,

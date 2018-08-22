@@ -5,7 +5,7 @@ import { Product } from "@app/models/product";
 
 export interface ProductsState extends EntityState<Product> {}
 
-@Injectable({providedIn: ProductsStateModule})
+@Injectable({providedIn: 'root'})
 @StoreConfig({ name: 'products' })
 export class ProductsStore extends EntityStore<ProductsState, Product> {
     constructor() {

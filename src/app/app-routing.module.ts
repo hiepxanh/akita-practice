@@ -32,6 +32,10 @@ const routes: Routes = [
     {
         path: 'products',
         loadChildren: './views/products/products.module#ProductsModule'
+    },
+    {
+        path: 'cart',
+        loadChildren: './views/cart/cart.module#CartModule'
     }
 ]
 

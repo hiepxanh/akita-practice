@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { Product } from '@app/models/product';
 import { ProductsService } from '../../products-state/products.service';
 import { startWith, switchMap } from 'rxjs/operators';
+import { CartService } from '../../../cart/cart-state/cart.service';
 
 @Component({
   selector: 'app-products',
@@ -18,7 +19,8 @@ export class ProductsComponent implements OnInit {
 
   constructor(
     private productsService: ProductsService,
-    private productsQuery: ProductsQuery
+    private productsQuery: ProductsQuery,
+    private cartService: CartService
   ) { }
 
   ngOnInit() {
@@ -30,6 +32,15 @@ export class ProductsComponent implements OnInit {
       startWith(''),
       switchMap(value => this.productsQuery.getProducts(value))
     )
+  }
+
+  addProductToCart({ id }: Product) {
+    this.cartService.addProductToCart(id);
+  }
+
+  
+  subtract({ id }: Product) {
+    this.cartService.subtract(id);
   }
 
 }
