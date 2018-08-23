@@ -1,0 +1,2 @@
+<app-playbook-search-searchbar [query]="searchQuery" [searching]="loading$ | async" [error]="error$ | async" (search)="search($event)"></app-playbook-search-searchbar>
+<app-playbook-search-previewlist [books]="books$ | async"></app-playbook-search-previewlist>

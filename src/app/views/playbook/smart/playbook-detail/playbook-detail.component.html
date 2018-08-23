@@ -1,0 +1,6 @@
+<app-playbook-detail-item
+      [book]="book$ | async"
+      [inCollection]="isSelectedBookInCollection$ | async"
+      (add)="updateCollection($event)"
+      (remove)="updateCollection($event)">
+</app-playbook-detail-item>

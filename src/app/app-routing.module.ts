@@ -36,13 +36,17 @@ const routes: Routes = [
     {
         path: 'cart',
         loadChildren: './views/cart/cart.module#CartModule'
+    },
+    {
+        path: 'playbook',
+        loadChildren: './views/playbook/playbook.module#PlaybookModule'
     }
 ]
 
 @NgModule({
     imports: [RouterModule.forRoot(
         routes,
-        { enableTracing: true }
+        // { enableTracing: true }
     )],
     exports: [RouterModule]
 })

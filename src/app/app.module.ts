@@ -9,6 +9,7 @@ import { ShowIfLoggedDirective } from './views/login/directives/show-if-logged.d
 import { SidenavModule } from './ui/sidenav/sidenav.module';
 import { MatSidenavModule } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     environment.production ? [] : AkitaNgDevtools.forRoot(),
     SidenavModule,
     MatSidenavModule,
+    HttpClientModule,
     BrowserAnimationsModule
   ],
   providers: [],
