@@ -11,8 +11,6 @@ import { MatSidenavModule } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
-import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
-import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
