@@ -40,6 +40,10 @@ const routes: Routes = [
     {
         path: 'playbook',
         loadChildren: './views/playbook/playbook.module#PlaybookModule'
+    },
+    {
+        path: 'invite-app',
+        loadChildren: './views/invite-app/invite-app.module#InviteAppModule'
     }
 ]
 
