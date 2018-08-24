@@ -1,0 +1,13 @@
+<ng-container *ngIf="!(loading$ | async); else loadingTpl">
+
+  <input placeholder="Search Product.." [formControl]="search">
+
+  <div class="list-product">
+    <app-product *ngFor="let product of (products$ | async)" [product]="product" 
+    (add)="addProductToCart($event)"
+    (subtract)="subtract($event)"></app-product>
+  </div>
+
+</ng-container>
+
+<ng-template #loadingTpl>...</ng-template>

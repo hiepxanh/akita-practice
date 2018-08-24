@@ -1,0 +1,42 @@
+button {
+    margin-bottom: 5px;
+  } 
+  
+  .add-new {
+  margin-top: 10px;
+  }
+  
+  .centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  }
+  
+  .pizza {
+    box-sizing: border-box;
+    height: 225px;
+    color: gray;
+  }
+  
+  .pizza.active {
+    border-color: black;
+    border-width: 3px;
+    color: black;
+  }
+  
+  .pizza-topping {
+    margin-right: 3px;
+  }
+  
+  .pizza-topping-close {
+    margin-left: 5px;
+  }
+  
+  .toppings-menu {
+  width: 200px;
+  }
+
+  .card-body img {
+    width: 200px;
+  }
+  

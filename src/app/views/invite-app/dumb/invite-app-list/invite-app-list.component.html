@@ -1,0 +1,9 @@
+<ul>
+  <li *ngFor="let person of people">
+    {{person.name}} - Guests: {{person.guests}}
+    <button (click)="addGuest.emit(person.id)">+</button>
+    <button *ngIf="person.guests" (click)="removeGuest.emit(person.id)">-</button> 
+    <mat-checkbox [(ngModel)]="person.attending" (change)="toggleAttending.emit(person.id)" >Attending</mat-checkbox>
+    <button (click)="removePerson.emit(person.id)">Delete</button>
+  </li>
+</ul>

@@ -1,1 +1,53 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+/* Materialize-CSS global resets */
+
+/* other resets in component stylesheets to take advantage of Angular's css encapsulation */
+
+input:not([type]), input[type=text], input[type=password], 
+input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea.materialize-textarea {
+      background-color: white;
+      border: initial;
+      border-bottom: initial;
+      border-radius: initial;
+      outline: initial;
+      height: initial;
+      width: initial;
+      font-size: initial;
+      margin: initial;
+      padding: initial;
+      box-shadow: initial;
+      box-sizing: initial;
+      transition: initial;
+    }
+
+    nav {
+      color: initial;
+      background-color: initial;
+      width: initial;
+      box-shadow: initial;
+    }
+
+    nav ul a:hover {
+      background: initial;
+      background-color: initial;
+    }
+
+    /* If you put this css in your component then you would be able to use angular material inputs through out that component and if you put this in your style.css or style.scss then you would be able to use it through out your application */
+    mat-form-field input {
+        border: none;
+        height: initial !important;
+    }
+    
+    mat-form-field input:focus {
+        border: none;
+        box-shadow: none;
+        height: initial !important;
+    }
+
+    input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):focus:not([readonly]), input[type=password]:not(.browser-default):focus:not([readonly]), input[type=email]:not(.browser-default):focus:not([readonly]), input[type=url]:not(.browser-default):focus:not([readonly]), input[type=time]:not(.browser-default):focus:not([readonly]), input[type=date]:not(.browser-default):focus:not([readonly]), input[type=datetime]:not(.browser-default):focus:not([readonly]), input[type=datetime-local]:not(.browser-default):focus:not([readonly]), input[type=tel]:not(.browser-default):focus:not([readonly]), input[type=number]:not(.browser-default):focus:not([readonly]), input[type=search]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+        border-bottom: initial;
+        box-shadow: initial;
+    }

@@ -1,0 +1,11 @@
+<ng-container *ngIf="(selectPeople$ | async) as people">
+    
+    <app-invite-app-stats [invited]="people.invited" [rsvped]="people.RSVPed" [totalWithGuests]="people.totalWithGuests"></app-invite-app-stats>
+
+    <app-invite-app-filter (updateFiltere)="updateFilter($event)"></app-invite-app-filter>
+
+    <app-invite-app-input (addPerson)="addPerson($event)"></app-invite-app-input>
+
+    <app-invite-app-list [people]="people.invitees" (addGuest)="addGuest($event)" (removeGuest)="removeGuest($event)" (removePerson)="removePerson($event)" (toggleAttending)="updateAttending($event)">
+    </app-invite-app-list>
+</ng-container>
