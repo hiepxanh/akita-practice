@@ -23,7 +23,11 @@ export class TodosListTodoComponent implements OnInit,OnDestroy {
     this.control = new FormControl(this.todo.completed);
     this.control.valueChanges
     .pipe(untilDestroyed(this))
-    .subscribe((completed:boolean) => this.complete.emit({...this.todo, completed}))
+    .subscribe((completed:boolean) => {
+      setTimeout(() => {
+        this.complete.emit({...this.todo, completed})
+      }, 1000);
+    })
   }
 
   ngOnDestroy(): void { }
