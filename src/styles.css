@@ -51,3 +51,7 @@ input[type=email], input[type=url], input[type=time], input[type=date], input[ty
         border-bottom: initial;
         box-shadow: initial;
     }
+
+    select {
+        display: block;
+    }
