@@ -16,7 +16,7 @@ export class AppComponent {
   title = 'akita';
   name$: Observable<string>;
   showSidenav$: Observable<boolean>;
-  navItems = ['Home', 'Todos', 'Books', 'Pizzas','Playbook', 'Playbook/Collection', 'Products','Invite-App'];
+  navItems = ['Home','Invite-App','Movies', 'Todos', 'Books', 'Pizzas','Playbook', 'Playbook/Collection', 'Products'];
   count$: Observable<number>;
   constructor(
     private sessionService: SessionService, 

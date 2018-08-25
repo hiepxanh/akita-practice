@@ -44,6 +44,10 @@ const routes: Routes = [
     {
         path: 'invite-app',
         loadChildren: './views/invite-app/invite-app.module#InviteAppModule'
+    },
+    {
+        path: 'movies',
+        loadChildren: './views/movies/movies.module#MoviesModule'
     }
 ]
 
