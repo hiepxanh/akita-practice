@@ -14,9 +14,13 @@ export class InviteAppInputComponent implements OnInit {
   ngOnInit() {
   }
 
-  add(personInput: HTMLInputElement) {
-    this.addPerson.emit(personInput.value);
-    personInput.value = '';
+  add(event,personInput: HTMLInputElement) {
+    // console.log("$event ",$event)
+    // to avoid duplicate vietnamese enter auto recognize 13 and 299
+    if (event.keyCode == 13) {
+      this.addPerson.emit(personInput.value);
+      personInput.value = '';
+    }
   }
 
 }

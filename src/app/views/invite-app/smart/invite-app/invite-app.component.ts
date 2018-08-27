@@ -22,6 +22,7 @@ export class InviteAppComponent implements OnInit {
   }
 
   addPerson(name:string) {
+
     this.peopleService.addPerson(name);
   }
 

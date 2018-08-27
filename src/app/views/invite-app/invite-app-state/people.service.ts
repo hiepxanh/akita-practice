@@ -14,6 +14,7 @@ export class PeopleService {
     }
 
     addPerson(name: string) {
+
         this.peopleStore.add(createPerson(name));
     }
 
